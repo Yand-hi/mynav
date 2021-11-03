@@ -50,11 +50,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
     return cache[name].exports;
 
-    function localRequire(x){
+    function localRequire(x) {
       return newRequire(localRequire.resolve(x));
     }
 
-    function resolve(x){
+    function resolve(x) {
       return modules[name][1][x] || x;
     }
   }
@@ -89,13 +89,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     if (typeof exports === "object" && typeof module !== "undefined") {
       module.exports = mainExports;
 
-    // RequireJS
+      // RequireJS
     } else if (typeof define === "function" && define.amd) {
-     define(function () {
-       return mainExports;
-     });
+      define(function () {
+        return mainExports;
+      });
 
-    // <script>
+      // <script>
     } else if (globalName) {
       this[globalName] = mainExports;
     }
@@ -103,59 +103,62 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"epB2":[function(require,module,exports) {
-var $siteList = $('.siteList');
-var $lastLi = $siteList.find('li.last');
-var x = localStorage.getItem('x');
-var object = JSON.parse(x);
-var hashMap = object || [{ logo: 'G', logoType: 'text', url: 'http://www.github.com' }, { logo: 'X', logoType: 'text', url: 'http://www.xiedaimala.com' }, { logo: 'D', logoType: 'text', url: 'https://www.developer.mozilla.org/zh-CN/' }, { logo: 'I', logoType: 'text', url: 'https://www.iconfont.cn/' }, { logo: 'C', logoType: 'text', url: 'http://www.csdn.net' }];
+})({
+  "epB2": [function (require, module, exports) {
+    var $siteList = $('.siteList');
+    var $lastLi = $siteList.find('li.last');
+    var x = localStorage.getItem('x');
+    var object = JSON.parse(x);
+    var hashMap = object || [{ logo: 'G', logoType: 'text', url: 'http://www.github.com' }, { logo: 'X', logoType: 'text', url: 'http://www.xiedaimala.com' }, { logo: 'D', logoType: 'text', url: 'https://www.developer.mozilla.org/zh-CN/' }, { logo: 'I', logoType: 'text', url: 'https://www.iconfont.cn/' }, { logo: 'C', logoType: 'text', url: 'http://www.csdn.net' }];
 
-var simplifyUrl = function simplifyUrl(url) {
-    return url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, '');
-};
-var render = function render() {
-    $siteList.find('li:not(.last)').remove();
-    hashMap.forEach(function (node, index) {
+    var simplifyUrl = function simplifyUrl(url) {
+      return url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, '');
+    };
+
+    var render = function render() {
+      $siteList.find('li:not(.last)').remove();
+      hashMap.forEach(function (node, index) {
         var $li = $('<li>\n            <div class="site">\n                <div class="logo">' + node.logo + '</div>\n                <div class="link">' + simplifyUrl(node.url) + '</div>\n                <div class="close">\n                    <svg class="icon" aria-hidden="true">\n                        <use xlink:href="#icon-close"></use>\n                    </svg>\n                </div>\n            </div>\n        </li>').insertBefore($lastLi);
         $li.on('click', function () {
-            window.open(node.url);
+          window.open(node.url);
         });
         $li.on('click', '.close', function (e) {
-            e.stopPropagation();
-            hashMap.splice(index, 1);
-            render();
+          e.stopPropagation();
+          hashMap.splice(index, 1);
+          render();
         });
-    });
-};
-render();
+      });
+    };
+    render();
 
-$('.addButton').on('click', function () {
-    var url = window.prompt('请输入您要添加的网址：');
-    if (url.indexOf('http') !== 0) {
+    $('.addButton').on('click', function () {
+      var url = window.prompt('请输入您要添加的网址：');
+      if (url.indexOf('http') !== 0) {
         url = 'https://' + url;
-    }
-    console.log(url);
-    hashMap.push({
+      }
+      console.log(url);
+      hashMap.push({
         logo: simplifyUrl(url)[0].toUpperCase(),
         logoType: 'text',
         url: url
+      });
+      render();
     });
-    render();
-});
 
-window.onbeforeunload = function () {
-    var string = JSON.stringify(hashMap);
-    localStorage.setItem('x', string);
-};
+    window.onbeforeunload = function () {
+      var string = JSON.stringify(hashMap);
+      localStorage.setItem('x', string);
+    };
 
-$(document).on('keyup', function (e) {
-    var key = e.key;
+    $(document).on('keyup', function (e) {
+      var key = e.key;
 
-    for (var i = 0; i < hashMap.length; i++) {
+      for (var i = 0; i < hashMap.length; i++) {
         if (hashMap[i].logo.toLowerCase() === key) {
-            window.open(hashMap[i].url);
+          window.open(hashMap[i].url);
         }
-    }
-});
-},{}]},{},["epB2"], null)
+      }
+    });
+  }, {}]
+}, {}, ["epB2"], null)
 //# sourceMappingURL=/main.c0cecf49.map
