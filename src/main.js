@@ -5,7 +5,7 @@ const object = JSON.parse(x)
 const hashMap = object || [
     { logo: 'G', logoType: 'text', url: 'http://www.github.com' },
     { logo: 'X', logoType: 'text', url: 'http://www.xiedaimala.com' },
-    { logo: 'D', logoType: 'text', url: 'https://developer.mozilla.org/zh-CN/' },
+    { logo: 'D', logoType: 'text', url: 'https://www.developer.mozilla.org/zh-CN/' },
     { logo: 'I', logoType: 'text', url: 'https://www.iconfont.cn/' },
     { logo: 'C', logoType: 'text', url: 'http://www.csdn.net' }
 ]
