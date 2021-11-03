@@ -108,7 +108,7 @@ var $siteList = $('.siteList');
 var $lastLi = $siteList.find('li.last');
 var x = localStorage.getItem('x');
 var object = JSON.parse(x);
-var hashMap = object || [{ logo: 'G', logoType: 'text', url: 'http://www.github.com' }, { logo: 'X', logoType: 'text', url: 'http://www.xiedaimala.com' }, { logo: 'R', logoType: 'text', url: 'http://www.developer.mozilla.org' }, { logo: 'I', logoType: 'text', url: 'https://www.iconfont.cn/' }, { logo: 'C', logoType: 'text', url: 'http://www.csdn.net' }];
+var hashMap = object || [{ logo: 'G', logoType: 'text', url: 'http://www.github.com' }, { logo: 'X', logoType: 'text', url: 'http://www.xiedaimala.com' }, { logo: 'D', logoType: 'text', url: 'https://www.developer.mozilla.org/zh-CN/' }, { logo: 'I', logoType: 'text', url: 'https://www.iconfont.cn/' }, { logo: 'C', logoType: 'text', url: 'http://www.csdn.net' }];
 
 var simplifyUrl = function simplifyUrl(url) {
     return url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, '');
@@ -158,4 +158,4 @@ $(document).on('keyup', function (e) {
     }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.022c1d7a.map
+//# sourceMappingURL=/main.c0cecf49.map
