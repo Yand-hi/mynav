@@ -3,11 +3,11 @@ const $lastLi = $siteList.find('li.last')
 const x = localStorage.getItem('x')
 const object = JSON.parse(x)
 const hashMap = object || [
-    { logo: 'G', logoType: 'text', url: 'http://www.github.com' },
-    { logo: 'X', logoType: 'text', url: 'http://www.xiedaimala.com' },
+    { logo: 'A', logoType: 'text', url: 'https://angular.io/' },
     { logo: 'D', logoType: 'text', url: 'https://developer.mozilla.org/zh-CN/' },
-    { logo: 'I', logoType: 'text', url: 'https://www.iconfont.cn/' },
-    { logo: 'C', logoType: 'text', url: 'http://www.csdn.net' }
+    { logo: 'G', logoType: 'text', url: 'http://www.github.com' },
+    { logo: 'R', logoType: 'text', url: 'https://reactjs.org/' },
+    { logo: 'V', logoType: 'text', url: 'https://vuejs.org/' },
 ]
 
 const simplifyUrl = (url) => {
