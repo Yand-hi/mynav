@@ -11,6 +11,8 @@ body{
     background-color: #eee;
     background-image: url('background.2feafa39.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .globalHeader{
